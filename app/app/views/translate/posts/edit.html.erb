@@ -1,0 +1,8 @@
+<h1>Edit Post</h1>
+
+<%= form_for(:post, :url => translate_post_path(params[:locale], params[:id]), :method => :put, :html => {:multipart => true, :class => :crud_form}) do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <p><%= f.submit "Update", :class => "submit" %></p>
+<% end %>
+
+

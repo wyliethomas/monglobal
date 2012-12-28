@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.clear{
+  clear: both;
+}
+
+.host_wrapper{
+  padding: 15px;
+  font: normal 12px Arial, Helvetica, sans-serif;
+}
+
+.host_header{
+  padding: 8px;
+  background-color: #464646;
+  height: 40px;
+  font: normal 22px Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+  font-size: 32px;
+  color: white;
+}
+
+
+.dev_list{
+}
+.dev_list ul{
+  list-style: none;
+  margin-left: -40px;
+}
+.dev_list ul li{
+  border: 1px solid #E3E0D5;
+  padding: 8px;
+  margin-bottom: 3px;
+  background: #F9F7F5;
+  height: 20px;
+}
+.dev_list_med{
+  width: 30%;
+  float: left;
+}
+.dev_list_action{
+  float: right;
+}
+.dev_list ul li.imagelist{
+  border: 1px solid #E3E0D5;
+  padding: 8px;
+  margin-bottom: 3px;
+  background: #F9F7F5;
+  height: 60px;
+}
+.dev_list_image{
+  float: left;
+  padding-right: 20px;
+}
+.dev_list_image img{
+  height: 55px;
+}
+
+
+
+
+
+#stylized{
+  border: 1px solid #E3E0D5;
+  background: #F9F7F5;
+  padding: 10px;
+}
+#stylized h1 {
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+#stylized p{
+  font-size:11px;
+  color:#666666;
+  margin-bottom:20px;
+  border-bottom:solid 1px #E3E0D5;
+  padding-bottom:10px;
+}
+#stylized label{
+  display:block;
+  font-weight:bold;
+  text-align:right;
+  width: 20%;
+  float:left;
+}
+#stylized .small{
+  color:#666666;
+  display:block;
+  font-size:11px;
+  font-weight:normal;
+  text-align:right;
+  width: 20%;
+}
+#stylized input{
+  float:left;
+  font-size:12px;
+  padding:4px 2px;
+  border:solid 1px #E3E0D5;
+  width:75%;
+  margin:2px 0 20px 10px;
+}
+#stylized textarea{
+  float:left;
+  font-size:12px;
+  padding:4px 2px;
+  border:solid 1px #E3E0D5;
+  width:75%;
+  margin:2px 0 20px 10px;
+}
+#stylized .submit{
+  clear:both;
+  margin-left:150px;
+  width:125px;
+  height:31px;
+  background:#666666 url(img/button.png) no-repeat;
+  text-align:center;
+  line-height:31px;
+  color:#FFFFFF;
+  font-size:11px;
+  font-weight:bold;
+}

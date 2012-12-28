@@ -1,0 +1,54 @@
+This is a Rails plugin for MongoMapper that allows you to translate your models in a way that is similar to the Globalize gem for ActiveRecord. 
+
+After heading down this path for several days I found https://github.com/ahe/mongo_translation and decided I like their implimentation of the klass better but it needed a few changes to make it easier to use from a rails controller.
+
+USAGE:
+First add to your Gemfile
+  gem 'monglobal'
+
+Then run bundle install
+
+Then, you need to set up the LANGS. In your environment.rb add this.
+
+  LANGS = []
+  for lang in I18n.available_locales
+    LANGS << lang.to_sym
+  end
+
+
+Then in your model:
+
+  class Post
+
+    include MongoMapper::Document
+    include Monglobal
+
+    translates :title, :body
+
+    key :title,       String
+    key :body,        String
+
+  end
+
+
+Now your controller is pretty much the same with one difference to how you update a record. Instead of using update_attributes use this on your update method.
+
+  def create
+    post = Post.new(params[:post])
+
+    if post.save
+      redirect_to translate_posts_path(params[:locale])
+    end
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update_translation(params[:locale], params[:post])
+    redirect_to translate_posts_path(params[:locale])
+  end
+
+
+The sample app here might help with some of the details of switching the locale and setting up the default locale.
+
+
+

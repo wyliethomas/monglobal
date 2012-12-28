@@ -1,0 +1,17 @@
+<h1>Post</h1>
+
+<p><%= link_to 'new post', new_translate_post_path(params[:locale]) %></p>
+
+<div class="dev_list">
+  <ul id="sortable">
+  <% for post in @posts %>
+    <li id="post_<%= post.id %>">
+      <%= link_to post.title, translate_posts_path(params[:locale], post.id) %>
+      <div class="dev_list_action">
+        <%= link_to 'edit', edit_translate_post_path(params[:locale], post.id) %> | <%= link_to 'delete', translate_post_path(params[:locale], post.id), :confirm => "Are you sure?", :method => "DELETE" %>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</div>
+

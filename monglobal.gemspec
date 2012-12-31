@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Wylie Thomas"]
   s.email       = ["wylie@wyliethomas.com"]
-  s.homepage    = "http://www.wyliethomas.com/blog/monglobal"
+  s.homepage    = "http://www.wyliethomas.com/blog/projects/monglobal"
   s.summary     = %q{Translates models in Rails for MongoDB}
-  s.description = %q{Translates modles in Rails for MongoDB}
+  s.description = %q{Translates models in Rails for MongoDB}
 
   s.rubyforge_project = "monglobal"
 

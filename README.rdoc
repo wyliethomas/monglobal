@@ -8,12 +8,9 @@ First add to your Gemfile
 
 Then run bundle install
 
-Then, you need to set up the LANGS. In your environment.rb add this.
+Then, you need to set up the LANGS constant.
 
-  LANGS = []
-  for lang in I18n.available_locales
-    LANGS << lang.to_sym
-  end
+  rails g monglobal:setup
 
 
 Then in your model:
@@ -50,6 +47,4 @@ Now your controller is pretty much the same with one difference to how you updat
 The sample app here might help with some of the details of switching the locale and setting up the default locale.
 
 
-TODO:
-Get this set up on the gem repos
 

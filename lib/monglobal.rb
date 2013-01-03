@@ -1,6 +1,10 @@
 require "monglobal/version"
 require 'active_support'
 
+  LANGS = []
+  for lang in I18n.available_locales
+    LANGS << lang.to_sym
+  end
 
 module Monglobal  
 
@@ -10,6 +14,7 @@ module Monglobal
   end
 
   def update_translation(locale, params)
+
     if locale == "#{I18n.default_locale}"
       #just update the main record
       self.update_attributes(params)

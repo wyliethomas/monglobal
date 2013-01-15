@@ -8,11 +8,6 @@ First add to your Gemfile
 
 Then run bundle install
 
-Then, you need to set up the LANGS constant.
-
-  rails g monglobal:setup
-
-
 Then in your model:
 
   class Post

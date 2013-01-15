@@ -1,10 +1,6 @@
 require "monglobal/version"
 require 'active_support'
 
-  LANGS = []
-  for lang in I18n.available_locales
-    LANGS << lang.to_sym
-  end
 
 module Monglobal  
 
@@ -25,19 +21,18 @@ module Monglobal
       translations = send("#{self.class.to_s}Translation".underscore.pluralize.to_sym)
       translation_class = Kernel.const_get("#{self.class.to_s}Translation")
 
+
       # update existing translations
       translations.each do |translation|
         translation.update_attributes(params.delete(translation.locale))
       end
       
       # create new translations
-      (LANGS - [I18n.default_locale]).each do |lang|
-        attrs = params[lang.to_s]
-        if attrs
-          tr = translation_class.new(attrs)
-          tr.locale = lang.to_s
-          translations << tr
-        end
+      attrs = params[locale]
+      if attrs
+        tr = translation_class.new(attrs)
+        tr.locale = locale
+        translations << tr
       end
       
       save
@@ -56,6 +51,7 @@ module Monglobal
         args.each do |attr|
           key attr.to_sym, String
         end
+
       end
       Object.const_set klass_name, translation_model
       

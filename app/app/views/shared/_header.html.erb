@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="header_logo">
+    Monglobal DEMO
+  </div>
+  
+  <div class="header_login">
+    <%= lang_display %>
+  </div>
+
+
+  <div class="clear"> </div>
+</div>
+
+<div id="navigation">
+  <ul id="nav">
+    <li class="page_item <%= @select_post %>"><%= link_to "Posts", translate_posts_path(params[:locale]) %></li>
+  </ul>
+</div>
+
+<div class="clear"> </div>
+

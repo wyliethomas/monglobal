@@ -1,0 +1,12 @@
+<div class="langlist">
+  <div class="langselect">
+    Language
+  </div>
+  <ul id="langlist">
+    <li><%= link_to_unless I18n.locale == :en, "English", locale: "en" %> </li>
+    <li><%= link_to_unless I18n.locale == :es, "Spanish", locale: "es" %> </li>
+    <li><%= link_to_unless I18n.locale == :fr, "French", locale: "fr" %> </li>
+    <li><%= link_to_unless I18n.locale == :jp, "Japanese", locale: "jp" %> </li>
+  </ul>
+</div>
+

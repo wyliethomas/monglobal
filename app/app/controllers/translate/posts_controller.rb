@@ -1,7 +1,8 @@
 class Translate::PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all(:order => '_id')
+    @select_post = "current_page_item"
   end
 
   def show
@@ -9,6 +10,7 @@ class Translate::PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @select_post = "current_page_item"
   end
 
   def create
@@ -21,6 +23,7 @@ class Translate::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @select_post = "current_page_item"
   end
 
   def update

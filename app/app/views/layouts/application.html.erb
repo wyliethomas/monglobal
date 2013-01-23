@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mongotrans</title>
+  <title>Monglobal DEMO</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".langselect").langmenu({target: "#langlist"});
+    });
+  </script>  
 </head>
 <body>
 
-<div class="host_wrapper">
-  <%= yield %>
-</div>
+  <%= render :partial => 'shared/header' %>
+  <div id="content_wrapper">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

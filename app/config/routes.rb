@@ -1,9 +1,12 @@
 Mongotrans::Application.routes.draw do
 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   scope ':locale', locale: /#{I18n.available_locales.join("|")}/ do
+    match 'welcome' => 'welcome#index', :as => :welcome
+  
 
     #translate admin
     namespace :translate do
@@ -15,7 +18,7 @@ Mongotrans::Application.routes.draw do
   end
 
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
-  match '', to: redirect("/#{I18n.default_locale}")
+  #match '', to: redirect("/#{I18n.default_locale}")
   
 
   # Sample of regular route:
@@ -64,7 +67,7 @@ Mongotrans::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
